@@ -1,6 +1,17 @@
 // @emotion
 import { css } from "@emotion/css";
 
+const ListButtonCss = css({
+  background: "none",
+  border: "none",
+  color: "aliceblue",
+  fontWeight: 500,
+  textAlign: "left",
+  fontSize: 15,
+  cursor: "pointer",
+  marginBottom: 10,
+});
+
 const IndexContentCss = css({
   height: "100%",
 });
@@ -12,6 +23,6 @@ const IndexSidebarCss = css({
   minHeight: 300,
 });
 
-export { IndexContentCss };
+export { IndexContentCss, ListButtonCss };
 
 export default IndexSidebarCss;
