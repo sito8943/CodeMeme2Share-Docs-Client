@@ -46,6 +46,7 @@ const Start = () => {
         </Paragraph>
         <LinkButton
           link="/docs"
+          target="_self"
           style={{
             margin: "auto",
             width: 100,
