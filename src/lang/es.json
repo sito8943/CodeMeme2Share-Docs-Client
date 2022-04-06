@@ -1,0 +1,22 @@
+{
+  "es": {
+    "Start": {
+      "Content": "¿Quieres hacer público tus porciones de códigos manera original?",
+      "Button": "Comenzar"
+    },
+    "Home": {
+      "Index": {
+        "Title": "Contenido",
+        "Content": [
+          {
+            "Title": "Componentes",
+            "Content": ["Loading", "Notification", "Container", "Typography", "Button", "Icon"]
+          }
+        ]
+      },
+      "Main": {
+        "Content": []
+      }
+    }
+  }
+}

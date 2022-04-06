@@ -1,0 +1,22 @@
+{
+  "en": {
+    "Start": {
+      "Content": "Do you want to make your cool code shorts public?",
+      "Button": "Get started"
+    },
+    "Home": {
+      "Index": {
+        "Title": "Content",
+        "Content": [
+          {
+            "Title": "Components",
+            "Content": ["Loading", "Notification", "Container", "Typography", "Button", "Icon"]
+          }
+        ]
+      },
+      "Main": {
+        "Content": []
+      }
+    }
+  }
+}

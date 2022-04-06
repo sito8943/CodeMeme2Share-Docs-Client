@@ -1,6 +1,9 @@
 import { StrictMode } from "react";
 import * as ReactDOMClient from "react-dom/client";
 
+// context
+import { LanguageProvider } from "context/Language";
+
 // views
 import App from "./App";
 
@@ -15,6 +18,8 @@ const root = ReactDOMClient.createRoot(container);
 // Initial render: Render an element to the root.
 root.render(
   <StrictMode>
-    <App />
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
   </StrictMode>
 );

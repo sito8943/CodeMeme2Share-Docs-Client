@@ -3,15 +3,24 @@
 import React from "react";
 
 // codememe2share
-import { Container, Paragraph } from "codememe2share";
+import { Container, LinkButton, Paragraph } from "codememe2share";
 
 // styles
-import NavbarCss from "./styles";
+import NavbarCss, { LinkToNPMCss } from "./styles";
 
 const Navbar = () => {
   return (
     <Container ignoreDefault className={NavbarCss}>
-      <Paragraph>CodeMeme2Share v:@1.12.14</Paragraph>
+      <Paragraph>
+        CodeMeme2Share{" "}
+        <LinkButton
+          className={LinkToNPMCss}
+          link="https://www.npmjs.com/package/codememe2share"
+          ignoreDefault
+        >
+          @1.12.14
+        </LinkButton>
+      </Paragraph>
     </Container>
   );
 };
