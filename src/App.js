@@ -1,24 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
+// codememe2share components
+import MemeShare, { Container, Rotate } from "codememe2share";
+
+// images
+import logo from "assets/images/logo.svg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MemeShare>
+      <Container>
+        <Rotate>
+          <img src={logo} alt="react-logo" />
+        </Rotate>
+      </Container>
+    </MemeShare>
   );
 }
 
