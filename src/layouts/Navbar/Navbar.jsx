@@ -11,7 +11,7 @@ import NavbarCss from "./styles";
 const Navbar = () => {
   return (
     <Container ignoreDefault className={NavbarCss}>
-      <Paragraph>CodeMeme2Share v:@1.12.14</Paragraph>
+      <Paragraph>CodeMeme2Share @1.12.14</Paragraph>
     </Container>
   );
 };

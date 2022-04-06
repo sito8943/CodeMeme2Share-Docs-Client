@@ -3,7 +3,8 @@ import { css } from "@emotion/css";
 
 const NavbarCss = css({
   width: "100vw",
-  height: 45,
+  paddingLeft: 10,
+  height: 55,
   background: "#222333ec",
   display: "flex",
 });

@@ -1,6 +1,5 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable no-undef */
-/* eslint-disable no-console */
 /* eslint-disable react/jsx-no-undef */
 import { useState, useEffect } from "react";
 
