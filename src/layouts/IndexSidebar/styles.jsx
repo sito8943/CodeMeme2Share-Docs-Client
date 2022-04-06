@@ -2,7 +2,7 @@
 import { css } from "@emotion/css";
 
 const IndexSidebarCss = css({
-  width: 250,
+  width: 340,
   marginLeft: 20,
   height: "90vh",
   minHeight: 300,

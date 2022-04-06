@@ -4,7 +4,7 @@
 import React from "react";
 
 // codememe2share components
-import { Container, AppleDots } from "codememe2share";
+import { Container, AppleDots, Title } from "codememe2share";
 
 // styles
 import IndexSidebarCss from "./styles";
@@ -12,7 +12,10 @@ import IndexSidebarCss from "./styles";
 const IndexSidebar = () => {
   return (
     <Container className={IndexSidebarCss}>
-      <AppleDots />
+      <Container>
+        <AppleDots />
+        <Title variant="h4">Índice</Title>
+      </Container>
     </Container>
   );
 };
