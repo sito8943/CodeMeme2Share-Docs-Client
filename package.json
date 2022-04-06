@@ -1,36 +1,37 @@
 {
-  "name": "codememe2share-docs-client",
-  "version": "1.0.0",
-  "description": "CodeMeme2Share docs ui client",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SitoNumbis/CodeMeme2Share-Docs.git"
-  },
-  "keywords": [
-    "CodeMeme2Share",
-    "react",
-    "css",
-    "docs"
-  ],
+  "name": "myapp",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "codememe2share": "^1.12.5",
-    "node-sass": "^7.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.28.0",
-    "react-icons": "^4.3.1",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "^5.0.0",
-    "react-tooltip": "^4.2.21"
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "5.0.0"
   },
-  "author": "Sito",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SitoNumbis/CodeMeme2Share-Docs/issues"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/SitoNumbis/CodeMeme2Share-Docs#readme"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
