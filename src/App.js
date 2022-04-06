@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // layouts
-import Navbar from "layouts/Navbar/Navbar";
+import Main from "layouts/Main/Main";
 
 // views
 import Home from "views/Home/Home";
@@ -22,7 +22,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navbar />}>
+        <Route path="/" element={<Main />}>
           <Route index element={<Start />} />
           <Route path="/docs" element={<Home />}>
             {/*

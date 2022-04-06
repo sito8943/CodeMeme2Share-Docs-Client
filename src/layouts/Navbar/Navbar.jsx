@@ -2,14 +2,17 @@
 /* eslint-disable arrow-body-style */
 import React from "react";
 
-// react-router-dom
-import { Outlet } from "react-router-dom";
+// codememe2share
+import { Container, Paragraph } from "codememe2share";
+
+// styles
+import NavbarCss from "./styles";
 
 const Navbar = () => {
   return (
-    <div>
-      <Outlet />
-    </div>
+    <Container ignoreDefault className={NavbarCss}>
+      <Paragraph>CodeMeme2Share v:@1.12.14</Paragraph>
+    </Container>
   );
 };
 

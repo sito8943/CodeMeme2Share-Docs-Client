@@ -4,12 +4,8 @@
 /* eslint-disable react/jsx-no-undef */
 import { useState, useEffect } from "react";
 
-// react-lottie
-import Lottie from "react-lottie";
-
 // codememe2share components
 import MemeShare, {
-  Loading,
   Container,
   Rotate,
   AppleDots,
@@ -18,11 +14,13 @@ import MemeShare, {
   Paragraph,
 } from "codememe2share";
 
+// own components
+import Loader from "components/Loader/Loader";
+
 // icons
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 // images
-import lottie from "assets/images/loading.json";
 import logo from "assets/images/logo.svg";
 
 const Start = () => {
@@ -36,18 +34,7 @@ const Start = () => {
 
   return (
     <MemeShare background="random">
-      <Loading
-        style={{
-          transition: "all 1000 ease",
-          opacity: loading ? 1 : 0,
-          zIndex: loading ? 99 : -1,
-          background: "#222333",
-        }}
-      >
-        <Container style={{ width: 200, background: "none", backdropFilter: "none" }}>
-          <Lottie options={{ animationData: lottie }} />
-        </Container>
-      </Loading>
+      <Loader visible={loading} />
       <Container>
         <AppleDots />
         <Rotate style={{ width: 250, margin: "auto" }} delay="5s">
