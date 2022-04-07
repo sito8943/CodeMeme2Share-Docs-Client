@@ -1,5 +1,6 @@
 {
   "name": "codememe2share-docs",
+  "homepage": "https://sitonumbis.github.io/CodeMeme2Share-Docs-Client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
