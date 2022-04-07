@@ -1,6 +1,12 @@
 {
-  "Index": {
-    "Title": "Contenido",
-    "Content": []
+  "es": {
+    "Start": {
+      "Content": "¿Quieres hacer público tus porciones de códigos manera original?",
+      "Button": "Comenzar"
+    },
+    "Index": {
+      "Title": "Contenido",
+      "Content": []
+    }
   }
 }

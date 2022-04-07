@@ -1,6 +1,12 @@
 {
-  "Index": {
-    "Title": "Content",
-    "Content": []
+  "en": {
+    "Start": {
+      "Content": "Do you want to make your cool code shorts public?",
+      "Button": "Get started"
+    },
+    "Index": {
+      "Title": "Content",
+      "Content": []
+    }
   }
 }
