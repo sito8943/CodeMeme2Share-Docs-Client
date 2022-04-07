@@ -7,12 +7,14 @@ import React from "react";
 import { Container, AppleDots } from "codememe2share";
 
 // styles
-import MainBodyCss from "./styles";
+import MainBodyCss, { ContentCss } from "./styles";
 
 const MainBody = () => {
   return (
     <Container className={MainBodyCss}>
-      <AppleDots />
+      <Container className={ContentCss}>
+        <AppleDots />
+      </Container>
     </Container>
   );
 };

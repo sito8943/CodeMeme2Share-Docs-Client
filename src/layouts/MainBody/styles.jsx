@@ -1,6 +1,10 @@
 // @emotion
 import { css } from "@emotion/css";
 
+const ContentCss = css({
+  height: "100%",
+});
+
 const MainBody = css({
   minWidth: 500,
   width: "calc(100% - 350px)",
@@ -10,3 +14,5 @@ const MainBody = css({
 });
 
 export default MainBody;
+
+export { ContentCss };

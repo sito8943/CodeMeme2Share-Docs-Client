@@ -26,13 +26,15 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 // images
 import logo from "assets/images/logo.svg";
 
+// styles
+import { RotateCss, ParagraphCss, LinkButtonCss } from "./styles";
+
 const Start = (props) => {
   const { texts } = props;
 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(texts.Content);
     setTimeout(() => {
       setLoading(false);
     }, 500);
@@ -44,21 +46,12 @@ const Start = (props) => {
       {!loading && (
         <Container>
           <AppleDots />
-          <Rotate style={{ width: 250, margin: "auto" }} delay="5s">
+          <Rotate className={RotateCss} delay="5s">
             <img src={logo} alt="react-logo" />
           </Rotate>
           <Title variant="h3">CodeMeme2Share</Title>
-          <Paragraph style={{ textAlign: "center" }}>{texts.Content}</Paragraph>
-          <LinkButton
-            link="/docs"
-            style={{
-              margin: "auto",
-              width: 100,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-around",
-            }}
-          >
+          <Paragraph className={ParagraphCss}>{texts.Content}</Paragraph>
+          <LinkButton link="/docs" target="_self" className={LinkButtonCss}>
             {texts.Button}
             <BsFillArrowRightCircleFill />
           </LinkButton>
