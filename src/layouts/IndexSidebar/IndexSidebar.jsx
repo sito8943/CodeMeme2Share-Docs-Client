@@ -9,14 +9,25 @@ import React from "react";
 // prop-types
 import PropTypes from "prop-types";
 
+// context
+import { useIndex } from "context/IndexContext";
+
 // codememe2share components
 import { Container, AppleDots, Title, Button, Paragraph } from "codememe2share";
 
 // styles
-import IndexSidebarCss, { IndexContentCss, ListButtonCss } from "./styles";
+import IndexSidebarCss, { IndexContentCss, ListButtonCss, IndexSelectedCss } from "./styles";
 
 const IndexSidebar = (props) => {
   const { texts } = props;
+
+  const { indexState, setIndexState } = useIndex();
+
+  const listButtonClicked = (e) => {
+    const { id } = e.target;
+    setIndexState({ type: "set", to: Number(id.substring(1)) });
+    console.log(id, indexState);
+  };
 
   return (
     <Container className={IndexSidebarCss}>
@@ -25,17 +36,29 @@ const IndexSidebar = (props) => {
         <Title variant="h4">{texts.Title}</Title>
         {texts.Content.map((item, i) => {
           return item.Content ? (
-            <div style={{ display: "flex", flexDirection: "column" }}>
+            <div key={`d${i}`} style={{ display: "flex", flexDirection: "column" }}>
               <Paragraph>{item.Title}</Paragraph>
               {item.Content.map((jtem, j) => (
-                <Button className={ListButtonCss} ignoreDefault key={`i${j}`} id={`i${j}`}>
+                <Button
+                  action={listButtonClicked}
+                  className={`${ListButtonCss} ${indexState.index === j ? IndexSelectedCss : ""}`}
+                  ignoreDefault
+                  key={`i${j}`}
+                  id={`i${j}`}
+                >
                   {jtem}
                 </Button>
               ))}
             </div>
           ) : (
-            <Button ignoreDefault key={`i${i}`} id={`i${i}`}>
-              {item}
+            <Button
+              action={listButtonClicked}
+              className={`${ListButtonCss} ${indexState.index === i ? IndexSelectedCss : ""}`}
+              ignoreDefault
+              key={`id${i}`}
+              id={`i${i}`}
+            >
+              {item.Title}
             </Button>
           );
         })}

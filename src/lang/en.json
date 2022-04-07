@@ -9,6 +9,9 @@
         "Title": "Content",
         "Content": [
           {
+            "Title": "Installation"
+          },
+          {
             "Title": "Components",
             "Content": ["Loading", "Notification", "Container", "Typography", "Button", "Icon"]
           }

@@ -1,6 +1,10 @@
 // @emotion
 import { css } from "@emotion/css";
 
+const IndexSelectedCss = css({
+  color: "#bdbbbb",
+});
+
 const ListButtonCss = css({
   background: "none",
   border: "none",
@@ -23,6 +27,6 @@ const IndexSidebarCss = css({
   minHeight: 300,
 });
 
-export { IndexContentCss, ListButtonCss };
+export { IndexContentCss, ListButtonCss, IndexSelectedCss };
 
 export default IndexSidebarCss;
