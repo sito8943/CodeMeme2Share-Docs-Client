@@ -26,7 +26,6 @@ const IndexSidebar = (props) => {
   const listButtonClicked = (e) => {
     const { id } = e.target;
     setIndexState({ type: "set", to: Number(id.substring(1)) });
-    console.log(id, indexState);
   };
 
   return (

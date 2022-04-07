@@ -30,7 +30,6 @@ const MainBody = (props) => {
 
   useEffect(() => {
     setContent(texts.Content[indexState.index]);
-    console.log(texts.Content[indexState.index], indexState.index, texts);
   }, [texts, indexState.index]);
 
   return (

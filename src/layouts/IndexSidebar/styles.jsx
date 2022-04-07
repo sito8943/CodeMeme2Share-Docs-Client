@@ -21,6 +21,7 @@ const ListButtonCss = css({
 
 const IndexContentCss = css({
   height: "100%",
+  overflow: "auto",
 });
 
 const IndexSidebarCss = css({
