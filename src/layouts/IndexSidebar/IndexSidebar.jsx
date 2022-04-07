@@ -41,22 +41,24 @@ const IndexSidebar = (props) => {
               {item.Content.map((jtem, j) => (
                 <Button
                   action={listButtonClicked}
-                  className={`${ListButtonCss} ${indexState.index === j ? IndexSelectedCss : ""}`}
+                  className={`${ListButtonCss} ${
+                    indexState.index === jtem.Id ? IndexSelectedCss : ""
+                  }`}
                   ignoreDefault
                   key={`i${j}`}
-                  id={`i${j}`}
+                  id={`i${jtem.Id}`}
                 >
-                  {jtem}
+                  {jtem.Label}
                 </Button>
               ))}
             </div>
           ) : (
             <Button
               action={listButtonClicked}
-              className={`${ListButtonCss} ${indexState.index === i ? IndexSelectedCss : ""}`}
+              className={`${ListButtonCss} ${indexState.index === item.Id ? IndexSelectedCss : ""}`}
               ignoreDefault
               key={`id${i}`}
-              id={`i${i}`}
+              id={`i${item.Id}`}
             >
               {item.Title}
             </Button>

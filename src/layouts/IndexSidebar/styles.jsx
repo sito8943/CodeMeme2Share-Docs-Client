@@ -2,7 +2,7 @@
 import { css } from "@emotion/css";
 
 const IndexSelectedCss = css({
-  color: "#bdbbbb",
+  color: "#bdbbbb !important",
 });
 
 const ListButtonCss = css({
@@ -13,7 +13,10 @@ const ListButtonCss = css({
   textAlign: "left",
   fontSize: 15,
   cursor: "pointer",
-  marginBottom: 10,
+  marginTop: 10,
+  "&:hover": {
+    color: "#bdbbbb",
+  },
 });
 
 const IndexContentCss = css({
