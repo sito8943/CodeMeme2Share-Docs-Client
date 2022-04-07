@@ -1,7 +1,7 @@
 // @emotion
 import { css } from "@emotion/css";
 
-const ContentCss = css({
+const MainContentCss = css({
   height: "100%",
 });
 
@@ -15,4 +15,4 @@ const MainBody = css({
 
 export default MainBody;
 
-export { ContentCss };
+export { MainContentCss };

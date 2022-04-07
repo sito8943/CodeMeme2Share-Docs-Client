@@ -4,9 +4,19 @@
       "Content": "¿Quieres hacer público tus porciones de códigos manera original?",
       "Button": "Comenzar"
     },
-    "Index": {
-      "Title": "Contenido",
-      "Content": []
+    "Home": {
+      "Index": {
+        "Title": "Contenido",
+        "Content": [
+          {
+            "Title": "Componentes",
+            "Content": ["Loading", "Notification", "Container", "Typography", "Button", "Icon"]
+          }
+        ]
+      },
+      "Main": {
+        "Content": []
+      }
     }
   }
 }
