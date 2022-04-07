@@ -9,10 +9,12 @@ const ParagraphCss = css({
 
 const LinkButtonCss = css({
   margin: "auto",
-  width: 100,
+  width: 130,
   display: "flex",
   alignItems: "center",
   justifyContent: "space-around",
+  color: "aliceblue",
+  textDecoration: "none",
 });
 
 export { RotateCss, ParagraphCss, LinkButtonCss };

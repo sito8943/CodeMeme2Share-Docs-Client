@@ -41,10 +41,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route index element={<Start texts={languages[currentLang].Start} />} />
-          <Route
-            path={`${process.env.PUBLIC_URL}/docs`}
-            element={<Home texts={languages[currentLang].Home} />}
-          >
+          <Route path="/docs" element={<Home texts={languages[currentLang].Home} />}>
             {/*
           <Route path=":teamId" element={<Team />} />
           <Route path="new" element={<NewTeamForm />} />
