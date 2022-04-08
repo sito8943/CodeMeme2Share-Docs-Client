@@ -31,9 +31,13 @@ const MainBody = (props) => {
 
   const [markdownContent, setMarkdownContent] = useState("");
 
-  useEffect(async () => {
+  const init = async () => {
     const newMarkdownContent = await FetchMarkdown(texts.Content[indexState.index]);
-    setMarkdownContent(newMarkdownContent);
+    setMarkdownContent(newMarkdownContent.markdown);
+  };
+
+  useEffect(() => {
+    init();
   }, [texts, indexState.index]);
 
   return (
