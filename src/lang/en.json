@@ -41,15 +41,11 @@
         "Content": [
           {
             "Id": 0,
-            "Markdowns": [
-              "## Installation \n Do you want to make your cool code shorts public? \n CodeMeme2Share is available as an [npm package](https://npmjs.com/package/codememe2share) \n\n To install and save in your ```package.json``` dependencies, run: \n\n ### npm \n ``` \n npm install codememe2share \n ``` \n ### yarn \n ``` \n yarn add codememe2share \n ```"
-            ]
+            "Markdowns": "en:installation"
           },
           {
             "Id": 1,
-            "Markdowns": [
-              "## Usage \n Is time to code: \n ### Quick start \n Here's a quick example to get you started, it's literally all you need: \n ``` \n import React from \"react\"; \n import ReactDom from \"react-dom\" \n\n \n import MemeShare, { Container, AppleDots, Title } from \"codememe2share\" \n\n const App () => { \n   return ( \n     <MemeShare> \n      <Container> \n\t<AppleDots /> \n\t<Title variant=\"h3\"> \n\t    Hola Mundo \n\t</Title> \n      </Container> \n     </MemeShare> \n   ); \n } \n\n ReactDom.render(<App />, document.getElementById(\"root\")); \n ``` \n Yes, this really is all you need to get started, as you can see in this live and interactive demo: \n ### Best preview \n This documentation always reflects the latest stable version of CodeMeme2Share. You can find older versions of the documentation on a [separate page](https://) \n ### Next steps \n Now that you have an idea of the basic setup, it's time to learn more about: \n - How to set entire page like CodeMeme2Share? \n - How [customize](https://) the components using [@emotion/css](https://npmjs.com/package/@emotion/css)?"
-            ]
+            "Markdowns": "en:usage"
           }
         ]
       }

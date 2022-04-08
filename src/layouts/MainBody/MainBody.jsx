@@ -18,6 +18,9 @@ import { useIndex } from "context/IndexContext";
 // codememe2share components
 import { Container, AppleDots } from "codememe2share";
 
+// services
+import { FetchMarkdown } from "services/post";
+
 // styles
 import MainBodyCss, { MainContentCss, MarkdownCss } from "./styles";
 
@@ -26,10 +29,11 @@ const MainBody = (props) => {
 
   const { indexState } = useIndex();
 
-  const [content, setContent] = useState([]);
+  const [markdownContent, setMarkdownContent] = useState("");
 
-  useEffect(() => {
-    setContent(texts.Content[indexState.index]);
+  useEffect(async () => {
+    const newMarkdownContent = await FetchMarkdown(texts.Content[indexState.index]);
+    setMarkdownContent(newMarkdownContent);
   }, [texts, indexState.index]);
 
   return (
@@ -37,12 +41,7 @@ const MainBody = (props) => {
       <Container style={{ minHeight: 300, height: "calc(90vh - 20px)" }}>
         <AppleDots />
         <Container className={MainContentCss}>
-          {content.Markdowns &&
-            content.Markdowns.map((item, i) => (
-              <ReactMarkdown className={MarkdownCss} key={`mk${i}`}>
-                {item}
-              </ReactMarkdown>
-            ))}
+          <ReactMarkdown className={MarkdownCss}>{markdownContent}</ReactMarkdown>
         </Container>
       </Container>
     </Container>
