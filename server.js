@@ -1,11 +1,19 @@
-/* eslint-disable import/newline-after-import */
-/* eslint-disable prefer-arrow-callback */
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const cors = require("cors");
+const basicAuth = require("express-basic-auth");
+
+const { docs } = require("./users/users");
+const { unauthorizedResponse } = require("./users/functions");
+
 const app = express();
 
+app.use(cors());
+app.use(express.json({ limit: 1048576 }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "build")));
+app.use(basicAuth({ users: docs, unauthorizedResponse }));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
@@ -13,7 +21,9 @@ app.get("/", (req, res) => {
 
 app.post("/file", (req, res) => {
   const { lang, file } = req.body.markdown.split(":");
-  const markdown = fs.readFileSync(`./files/${lang}/${file}`);
+  const markdown = fs.readFileSync(`./files/${lang}/${file}`, {
+    encoding: "utf-8",
+  });
   res.send(markdown);
 });
 
