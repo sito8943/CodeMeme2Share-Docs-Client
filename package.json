@@ -9,12 +9,7 @@
     "express-basic-auth": "^1.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "node ./server.js"
   },
   "eslintConfig": {
     "extends": [
