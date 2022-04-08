@@ -21,11 +21,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/file", (req, res) => {
-  const { lang, file } = req.body.markdown.split(":");
-  const markdown = fs.readFileSync(`./files/${lang}/${file}`, {
+  const splitted = req.body.markdown.Markdowns.split(":");
+  const markdown = fs.readFileSync(`./files/${splitted[0]}/${splitted[1]}.md`, {
     encoding: "utf-8",
   });
-  res.send(markdown);
+  res.send({ markdown });
 });
 
 app.listen(port, () => {
