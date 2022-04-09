@@ -4,18 +4,14 @@
 /* eslint-disable react/jsx-no-undef */
 import { useState, useEffect } from "react";
 
+// react-router-dom
+import { Link } from "react-router-dom";
+
 // prop-types
 import PropTypes from "prop-types";
 
 // codememe2share components
-import MemeShare, {
-  Container,
-  Rotate,
-  AppleDots,
-  LinkButton,
-  Title,
-  Paragraph,
-} from "codememe2share";
+import MemeShare, { Container, Rotate, AppleDots, Title, Paragraph, Button } from "codememe2share";
 
 // own components
 import Loader from "components/Loader/Loader";
@@ -51,10 +47,13 @@ const Start = (props) => {
           </Rotate>
           <Title variant="h3">CodeMeme2Share</Title>
           <Paragraph className={ParagraphCss}>{texts.Content}</Paragraph>
-          <LinkButton link="/docs" target="_self" className={LinkButtonCss}>
-            {texts.Button}
-            <BsFillArrowRightCircleFill />
-          </LinkButton>
+
+          <Link to="/docs" style={{ textDecoration: "none" }}>
+            <Button className={LinkButtonCss}>
+              {texts.Button}
+              <BsFillArrowRightCircleFill />
+            </Button>
+          </Link>
         </Container>
       )}
     </MemeShare>

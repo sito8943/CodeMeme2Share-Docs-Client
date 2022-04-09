@@ -14,7 +14,9 @@ const LinkButtonCss = css({
   alignItems: "center",
   justifyContent: "space-around",
   color: "aliceblue",
-  textDecoration: "none",
+  svg: {
+    marginLeft: 5,
+  },
 });
 
 export { RotateCss, ParagraphCss, LinkButtonCss };
