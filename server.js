@@ -10,7 +10,7 @@ const { unauthorizedResponse } = require("./users/functions");
 const app = express();
 const port = 9000;
 
-app.use(cors());
+app.options("*", cors()); // include before other routes
 app.use(express.json({ limit: 1048576 }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "build")));
