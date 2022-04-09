@@ -16,7 +16,12 @@ import { useIndex } from "context/IndexContext";
 import { Container, AppleDots, Title, Button, Paragraph } from "codememe2share";
 
 // styles
-import IndexSidebarCss, { IndexContentCss, ListButtonCss, IndexSelectedCss } from "./styles";
+import IndexSidebarCss, {
+  SubIndexCss,
+  IndexContentCss,
+  ListButtonCss,
+  IndexSelectedCss,
+} from "./styles";
 
 const IndexSidebar = (props) => {
   const { texts } = props;
@@ -42,7 +47,7 @@ const IndexSidebar = (props) => {
                   action={listButtonClicked}
                   className={`${ListButtonCss} ${
                     indexState.index === jtem.Id ? IndexSelectedCss : ""
-                  }`}
+                  } ${jtem.Sub ? SubIndexCss : ""}`}
                   ignoreDefault
                   key={`i${j}`}
                   id={`i${jtem.Id}`}

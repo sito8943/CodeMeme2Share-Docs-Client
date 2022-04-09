@@ -28,11 +28,23 @@
                 "Id": 2,
                 "Label": "Loading"
               },
-              { "Id": 3, "Label": "Notification" },
+              {
+                "Id": 3,
+                "Label": "Spinner",
+                "Sub": "#Spinner"
+              },
               { "Id": 4, "Label": "Container" },
-              { "Id": 5, "Label": "Typography" },
-              { "Id": 6, "Label": "Button" },
-              { "Id": 7, "Label": "Icon" }
+              { "Id": 5, "Label": "Rotate", "Sub": "#Rotate" },
+              { "Id": 6, "Label": "Notification" },
+              { "Id": 7, "Label": "Typography" },
+              { "Id": 8, "Label": "Title", "Sub": "#Title" },
+              { "Id": 9, "Label": "Paragraph", "Sub": "#Paragraph" },
+              { "Id": 10, "Label": "CodeArea (Alpha)", "Sub": "#CodeArea" },
+              { "Id": 11, "Label": "Button" },
+              { "Id": 12, "Label": "FileButton", "#Sub": "#FileButton" },
+              { "Id": 13, "Label": "LinkButton", "#Sub": "#LinkButton" },
+              { "Id": 14, "Label": "Icons" },
+              { "Id": 15, "Label": "Gradients" }
             ]
           }
         ]

@@ -5,6 +5,10 @@ const IndexSelectedCss = css({
   color: "#bdbbbb !important",
 });
 
+const SubIndexCss = css({
+  marginLeft: 20,
+});
+
 const ListButtonCss = css({
   background: "none",
   border: "none",
@@ -31,6 +35,6 @@ const IndexSidebarCss = css({
   minHeight: 300,
 });
 
-export { IndexContentCss, ListButtonCss, IndexSelectedCss };
+export { SubIndexCss, IndexContentCss, ListButtonCss, IndexSelectedCss };
 
 export default IndexSidebarCss;
