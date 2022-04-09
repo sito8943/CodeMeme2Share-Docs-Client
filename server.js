@@ -35,6 +35,7 @@ app.post("/file", (req, res) => {
   const markdown = fs.readFileSync(`./files/${splitted[0]}/${splitted[1]}.md`, {
     encoding: "utf-8",
   });
+  console.log(`${splitted[0]}/${splitted[1]}`);
   res.send({ markdown });
 });
 
