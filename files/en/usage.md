@@ -7,24 +7,24 @@ Is time to code:
 Here's a quick example to get you started, it's literally all you need:
 
 ```
-    import React from "react";
-    import ReactDom from "react-dom";
-    import MemeShare, { Container, AppleDots, Title } from "codememe2share";
+import React from "react";
+import ReactDom from "react-dom";
+import MemeShare, { Container, AppleDots, Title } from "codememe2share";
 
-    const App () => {
-        return (
-            <MemeShare>
-                <Container>
-                    <AppleDots />
-                    <Title variant="h3">
-                        Hola Mundo
-                    </Title>
-                </Container>
-            </MemeShare>
-        );
-    }
+const App () => {
+  return (
+    <MemeShare>
+      <Container>
+        <AppleDots />
+          <Title variant="h3">
+            Hola Mundo
+          </Title>
+       </Container>
+    </MemeShare>
+  );
+}
 
-    ReactDom.render(<App />, document.getElementById("root"));
+ReactDom.render(<App />, document.getElementById("root"));
 ```
 
 Yes, this really is all you need to get started, as you can see in this live and interactive demo:

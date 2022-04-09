@@ -16,11 +16,11 @@ Para instalar y guardar en tus dependencias del `package.json` de tu proyecto ex
 ### npm
 
 ```
-    npm install codememe2share
+npm install codememe2share
 ```
 
 ### yarn
 
 ```
-    yarn add codememe2share
+yarn add codememe2share
 ```
