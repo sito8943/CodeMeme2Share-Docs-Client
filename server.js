@@ -10,7 +10,11 @@ const { unauthorizedResponse } = require("./users/functions");
 const app = express();
 const port = 9000;
 
-app.options("*", cors({ origin: "http://localhost:3000" })); // include before other routes
+app.use(cors());
+app.options(
+  "/file",
+  cors({ origin: "http://localhost:3000", methods: "POST", credentials: true })
+); // include before other routes
 app.use(express.json({ limit: 1048576 }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "build")));
