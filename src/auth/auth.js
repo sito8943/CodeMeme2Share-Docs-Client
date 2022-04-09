@@ -5,4 +5,5 @@ export const getAuth = {
   Authorization: `Basic ${encode(`${user.name}:${user.pass}`)}`,
   Accept: "application/json",
   "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "POST",
 };

@@ -18,6 +18,7 @@ const Loader = (props) => {
   return (
     <Loading
       style={{
+        top: 1,
         transition: "all 1000 ease",
         opacity: visible ? 1 : 0,
         zIndex: visible ? 99 : -1,
