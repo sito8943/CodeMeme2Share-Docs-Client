@@ -5,12 +5,12 @@ import axios from "axios";
 // auth
 import { getAuth } from "auth/auth";
 
-// https://server-docs.herokuapp.com
+// http://localhost:9000/file
 
 const FetchMarkdown = async (which) => {
   try {
     const response = await axios.post(
-      "http://localhost:9000/file",
+      "https://sito-server-docs.herokuapp.com",
       { markdown: which },
       {
         headers: getAuth,
