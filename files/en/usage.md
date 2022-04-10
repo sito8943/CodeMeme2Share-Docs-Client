@@ -38,4 +38,4 @@ This documentation always reflects the latest stable version of CodeMeme2Share. 
 Now that you have an idea of the basic setup, it's time to learn more about:
 
 - How to set entire page like CodeMeme2Share?
-- How [customize](https://) the components using [@emotion/css](https://npmjs.com/package/@emotion/css)?
+- How to [customize](https://) the components using [@emotion/css](https://npmjs.com/package/@emotion/css)?
