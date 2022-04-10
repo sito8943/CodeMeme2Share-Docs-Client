@@ -11,13 +11,13 @@ import { StrictMode } from "react";
 import * as ReactDOMClient from "react-dom/client";
 import MemeShare, { Container, AppleDots, Title } from "codememe2share";
 
-const App () => {
+const App = () => {
   return (
     <MemeShare>
       <Container>
         <AppleDots />
           <Title variant="h3">
-            Hola Mundo
+            😃 Hola Mundo 😃
           </Title>
        </Container>
     </MemeShare>
