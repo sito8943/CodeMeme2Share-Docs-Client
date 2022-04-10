@@ -32,7 +32,6 @@ Yes, this really is all you need to get started, as you can see in this live and
 ### Best preview
 
 This documentation always reflects the latest stable version of CodeMeme2Share. You can find older versions of the documentation on a [separate page](https://)
-
 ### Next steps
 
 Now that you have an idea of the basic setup, it's time to learn more about:

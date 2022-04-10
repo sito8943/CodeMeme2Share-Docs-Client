@@ -4,6 +4,9 @@ const fs = require("fs");
 const cors = require("cors");
 const basicAuth = require("express-basic-auth");
 
+// firebase
+const getFile = require("./config");
+
 const { docs } = require("./users/users");
 const { unauthorizedResponse } = require("./users/functions");
 
@@ -34,15 +37,17 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post("/file", (req, res) => {
+app.post("/file", async (req, res) => {
   const splitted = req.body.markdown.Markdowns.split(":");
-  const markdown = fs.readFileSync(`./files/${splitted[0]}/${splitted[1]}.md`, {
+  const markdown = await getFile(splitted[0], splitted[1]);
+  console.log(markdown);
+  /*fs.readFileSync(`./files/${splitted[0]}/${splitted[1]}.md`, {
     encoding: "utf-8",
-  });
+  });*/
   console.log(`${splitted[0]}/${splitted[1]}`);
   res.send({ markdown });
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Sito docs server running ${port}`);
 });
