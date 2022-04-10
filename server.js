@@ -13,6 +13,7 @@ const { unauthorizedResponse } = require("./users/functions");
 const app = express();
 const port = 9000;
 
+app.set("etag", "strong"); //browser caching of static assets should work properly
 app.use(cors());
 app.options(
   "/file",
@@ -20,8 +21,7 @@ app.options(
 ); // include before other routes
 app.use(express.json({ limit: 1048576 }));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "build")));
-app.use(basicAuth({ users: docs, unauthorizedResponse }));
+app.use(express.static(path.join(__dirname, "public")));
 
 // allow cross-origin requests
 /*app.use(function (req, res, next) {
@@ -37,12 +37,18 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post("/file", async (req, res) => {
+const router = express.Router();
+
+router.use(basicAuth({ users: docs, unauthorizedResponse }));
+
+router.post("/", async (req, res) => {
   const splitted = req.body.markdown.Markdowns.split(":");
   const markdown = await getFile(splitted[0], splitted[1]);
   console.log(`${splitted[0]}/${splitted[1]}`);
   res.send({ markdown });
 });
+
+app.use("/file", router);
 
 app.listen(port, () => {
   console.log(`Sito docs server running ${port}`);
