@@ -7,8 +7,8 @@ Is time to code:
 Here's a quick example to get you started, it's literally all you need:
 
 ```
-import React from "react";
-import ReactDom from "react-dom";
+import { StrictMode } from "react";
+import * as ReactDOMClient from "react-dom/client";
 import MemeShare, { Container, AppleDots, Title } from "codememe2share";
 
 const App () => {
@@ -24,14 +24,27 @@ const App () => {
   );
 }
 
-ReactDom.render(<App />, document.getElementById("root"));
+const container = document.getElementById("root");
+
+// Create a root.
+const root = ReactDOMClient.createRoot(container);
+
+// Initial render: Render an element to the root.
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
 ```
 
-Yes, this really is all you need to get started, as you can see in this live and interactive demo:
+⚠️ _Note this examples is using react@18.0.0_ ⚠️
+
+Yes, this really is all you need to get started as you can see in [demo](https://)
 
 ### Best preview
 
 This documentation always reflects the latest stable version of CodeMeme2Share. You can find older versions of the documentation on a [separate page](https://)
+
 ### Next steps
 
 Now that you have an idea of the basic setup, it's time to learn more about:

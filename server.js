@@ -40,10 +40,6 @@ app.get("/", (req, res) => {
 app.post("/file", async (req, res) => {
   const splitted = req.body.markdown.Markdowns.split(":");
   const markdown = await getFile(splitted[0], splitted[1]);
-  console.log(markdown);
-  /*fs.readFileSync(`./files/${splitted[0]}/${splitted[1]}.md`, {
-    encoding: "utf-8",
-  });*/
   console.log(`${splitted[0]}/${splitted[1]}`);
   res.send({ markdown });
 });

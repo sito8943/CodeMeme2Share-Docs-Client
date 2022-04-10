@@ -7,8 +7,8 @@ Es hora de programar:
 Aquí puedes observar un ejemplo pequeño para comenzar, es literalmente todo lo que necesitas:
 
 ```
-import React from "react";
-import ReactDom from "react-dom";
+import { StrictMode } from "react";
+import * as ReactDOMClient from "react-dom/client";
 import MemeShare, { Container, AppleDots, Title } from "codememe2share";
 
 const App () => {
@@ -24,10 +24,22 @@ const App () => {
   );
 }
 
-ReactDom.render(<App />, document.getElementById("root"));
+const container = document.getElementById("root");
+
+// Create a root.
+const root = ReactDOMClient.createRoot(container);
+
+// Initial render: Render an element to the root.
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
 ```
 
-Sí, esto es realmente todo lo que necesitas para comenzar, como puedes ver en la demostración interactiva:
+⚠️ _Nota este ejemplo está usando react@18.0.0_ ⚠️
+
+Sí, esto es realmente todo lo que necesitas para comenzar, como puedes ver en la [demostración](https://):
 
 ### Mejor demostración
 

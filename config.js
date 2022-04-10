@@ -1,7 +1,13 @@
 // Import the functions you need from the SDKs you need
 const XMLHttpRequest = require("xhr2");
+var ab2str = require("arraybuffer-to-string");
 const { initializeApp } = require("firebase/app");
-const { getStorage, ref, getDownloadURL } = require("firebase/storage");
+const {
+  getStorage,
+  ref,
+  getDownloadURL,
+  getBytes,
+} = require("firebase/storage");
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,24 +26,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
-// Get a reference to the storage service, which is used to create references in your storage bucket
-const storage = getStorage(firebaseApp);
 async function getFile(lang, file) {
-  getDownloadURL(ref(storage, `/${lang}/${file}.md`))
-    .then((url) => {
-      // This can be downloaded directly:
-      const xhr = new XMLHttpRequest();
-      xhr.responseType = "blob";
-      xhr.onload = (event) => {
-        const blob = xhr.response;
-        return blob;
-      };
-      xhr.open("GET", url);
-      xhr.send();
-    })
-    .catch((error) => {
-      return error;
-    });
+  // Get a reference to the storage service, which is used to create references in your storage bucket
+  const storage = getStorage(firebaseApp);
+  const result = ab2str(await getBytes(ref(storage, `/${lang}/${file}.md`)));
+  return result;
 }
 
 module.exports = getFile;
