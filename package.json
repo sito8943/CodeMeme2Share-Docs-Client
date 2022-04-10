@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "@uiw/react-codesandbox": "^1.1.5",
     "axios": "^0.26.1",
     "codememe2share": "^1.12.14",
     "js-base64": "^3.7.2",
