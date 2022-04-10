@@ -20,6 +20,9 @@ import Main from "layouts/Main/Main";
 import Home from "views/Home/Home";
 import Start from "views/Start/Start";
 
+// styles
+import "./index.css";
+
 const App = () => {
   const { setLanguageState } = useLanguage();
 

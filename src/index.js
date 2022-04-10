@@ -8,9 +8,6 @@ import { IndexProvider } from "context/IndexContext";
 // views
 import App from "./App";
 
-// styles
-import "./index.css";
-
 const container = document.getElementById("root");
 
 // Create a root.

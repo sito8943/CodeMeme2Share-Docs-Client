@@ -41,7 +41,7 @@ const IndexSidebar = (props) => {
         {texts.Content.map((item, i) => {
           return item.Content ? (
             <div key={`d${i}`} style={{ display: "flex", flexDirection: "column" }}>
-              <Paragraph>{item.Title}</Paragraph>
+              <Paragraph style={{ marginBottom: 0 }}>{item.Title}</Paragraph>
               {item.Content.map((jtem, j) => (
                 <Button
                   action={listButtonClicked}

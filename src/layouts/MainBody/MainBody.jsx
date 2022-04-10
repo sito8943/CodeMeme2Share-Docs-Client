@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 
 // react-markdown
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import remarkGfm from "remark-gfm";
 
 // prop-types
 import PropTypes from "prop-types";
@@ -45,7 +46,9 @@ const MainBody = (props) => {
       <Container style={{ minHeight: 300, height: "calc(90vh - 20px)" }}>
         <AppleDots />
         <Container className={MainContentCss}>
-          <ReactMarkdown className={MarkdownCss}>{markdownContent}</ReactMarkdown>
+          <ReactMarkdown className={MarkdownCss} remarkPlugins={[remarkGfm]}>
+            {markdownContent}
+          </ReactMarkdown>
         </Container>
       </Container>
     </Container>

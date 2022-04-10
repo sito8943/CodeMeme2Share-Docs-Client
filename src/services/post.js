@@ -11,14 +11,13 @@ import { getAuth } from "auth/auth";
 const FetchMarkdown = async (which) => {
   try {
     const response = await axios.post(
-      "https://sito-server-docs.herokuapp.com/file",
+      "http://localhost:9000/file",
       { markdown: which },
       {
         headers: getAuth,
       }
     );
     const data = await response.data;
-    console.log(data);
     if (data.error === undefined) return data;
     return { error: response.statusText };
   } catch (e) {

@@ -1,13 +1,41 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/**Light-Scroll**/
+
+/* We put a background color and round the corners of the thumb */
+::-webkit-scrollbar-thumb {
+  background: rgb(125, 156, 167);
+  border-radius: 4px;
+}
+
+/* We change the background and add a shadow when hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(106, 145, 158);
+  box-shadow: 0 0 2px 1px rgba(102, 100, 100, 0.2);
+}
+
+/* We change the background when it is active */
+::-webkit-scrollbar-thumb:active {
+  background-color: rgb(106, 145, 158);
+}
+
+/* We put a background color and round the corners of the track */
+::-webkit-scrollbar-track {
+  background: #3a3a3a00;
+  border-radius: 4px;
+}
+
+/* We change the background when it is active or hover */
+::-webkit-scrollbar-track:hover {
+  background: #3a3a3a00;
 }

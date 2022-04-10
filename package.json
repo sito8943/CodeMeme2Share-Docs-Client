@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@uiw/react-codesandbox": "^1.1.5",
     "axios": "^0.26.1",
     "codememe2share": "^1.12.14",
     "js-base64": "^3.7.2",
@@ -17,7 +18,8 @@
     "react-lottie": "^1.2.3",
     "react-markdown": "^8.0.2",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "remark-gfm": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
