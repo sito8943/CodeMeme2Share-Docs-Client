@@ -39,7 +39,7 @@ root.render(
 
 ⚠️ _Note this examples is using react@18.0.0_ ⚠️
 
-Yes, this really is all you need to get started as you can see in [demo](https://)
+Yes, this really is all you need to get started as you can see in [demo](https://sito-server-docs.herokuapp.com/)
 
 ### Best preview
 
