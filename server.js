@@ -9,6 +9,8 @@ const getFile = require("./config");
 const { docs } = require("./users/users");
 const { unauthorizedResponse } = require("./users/functions");
 
+const load = require("./model/loading");
+
 const app = express();
 const port = process.env.PORT || 9000;
 
@@ -41,10 +43,18 @@ const router = express.Router();
 router.use(basicAuth({ users: docs, unauthorizedResponse }));
 
 router.post("/", async (req, res) => {
-  const splitted = req.body.markdown.Markdowns.split(":");
-  const markdown = await getFile(splitted[0], splitted[1]);
-  console.log(`${splitted[0]}/${splitted[1]}`);
-  res.send({ markdown });
+  load.start();
+  try {
+    const splitted = req.body.markdown.Markdowns.split(":");
+    const markdown = await getFile(splitted[0], splitted[1]);
+    res.send({ markdown });
+    load.stop();
+    console.log(`${splitted[0]}/${splitted[1]}`);
+  } catch (e) {
+    res.send(String(e));
+    load.stop();
+    console.log(e);
+  }
 });
 
 app.use("/file", router);

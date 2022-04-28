@@ -1,6 +1,57 @@
 ## Loading
 
-Componente que ocupa la pantalla completa que representa que la página está cargando. Está compuesta por un [Container](https://).
+Componente que ocupa la pantalla completa que representa que la página está cargando. Está compuesta por un [Container](/docs/2).
+
+### Example
+
+```
+import { StrictMode } from "react";
+import * as ReactDOMClient from "react-dom/client";
+
+// react-lottie
+//! si vas a usar una animación lottie
+//! recuerda añadir react-lottie (yarn add or npm install)
+import Lottie from "react-lottie";
+
+// codememe2share components
+import { Loading, Container } from "codememe2share";
+
+// images
+//! importa tu animación aquí
+//! puede ser una imagen o un lottie (en el caso que estés usando react-lottie)
+import lottie from "assets/images/loading.json";
+
+const LoadingScreen = () => {
+  return (
+    <Loading
+      style={{
+        background: "#222333",
+      }}
+    >
+      <Container style={{ width: 200, background: "none", backdropFilter: "none" }}>
+        <Lottie options={{ animationData: lottie }} />
+      </Container>
+    </Loading>
+  );
+};
+
+const container = document.getElementById("root");
+
+// Create a root.
+const root = ReactDOMClient.createRoot(container);
+
+// Renderización inicial: Renderiza un elemento en la raíz.
+root.render(
+  <StrictMode>
+    <LoadingScreen />
+  </StrictMode>
+);
+
+```
+
+⚠️ _Nota este ejemplo está usando react@18.0.0_ ⚠️
+
+[<Loading /> en acción](https://sito-server-docs.herokuapp.com/loading)
 
 ### Propiedades
 

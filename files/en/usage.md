@@ -17,7 +17,7 @@ const App = () => {
       <Container>
         <AppleDots />
           <Title variant="h3">
-            😃 Hola Mundo 😃
+            😃 Hello World 😃
           </Title>
        </Container>
     </MemeShare>

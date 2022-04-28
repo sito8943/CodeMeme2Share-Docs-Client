@@ -29,7 +29,7 @@ const container = document.getElementById("root");
 // Create a root.
 const root = ReactDOMClient.createRoot(container);
 
-// Initial render: Render an element to the root.
+// Renderización inicial: Renderiza un elemento en la raíz.
 root.render(
   <StrictMode>
     <App />
