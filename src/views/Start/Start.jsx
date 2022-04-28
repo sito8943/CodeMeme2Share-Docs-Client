@@ -17,7 +17,7 @@ import MemeShare, { Container, Rotate, AppleDots, Title, Paragraph, Button } fro
 import { useLanguage } from "context/Language";
 
 // own components
-import Loader from "components/Loader/Loader";
+import BigLoading from "layouts/BigLoading/BigLoading";
 
 // icons
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
@@ -41,7 +41,7 @@ const Start = () => {
 
   return (
     <MemeShare background="random">
-      <Loader visible={loading} />
+      <BigLoading visible={loading} />
       {!loading && (
         <motion.div
           initial={{ scale: 0 }}

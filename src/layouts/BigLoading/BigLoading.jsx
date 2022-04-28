@@ -4,38 +4,36 @@ import React from "react";
 // prop-types
 import PropTypes from "prop-types";
 
-// codememe2share components
-import { Loading, Container, Spinner } from "codememe2share";
+// react-lottie
+import Lottie from "react-lottie";
 
-const Loader = (props) => {
-  const { visible, id } = props;
+// codememe2share components
+import { Loading, Container } from "codememe2share";
+
+// images
+import lottie from "assets/images/loading.json";
+
+const BigLoading = (props) => {
+  const { visible } = props;
   return (
     <Loading
-      id={id}
       style={{
-        transition: "all 600ms ease",
+        top: 1,
+        transition: "all 1000 ease",
         opacity: visible ? 1 : 0,
         zIndex: visible ? 99 : -1,
         background: "#222333",
-        position: "absolute",
-        marginLeft: "-48px",
-        marginTop: "-76px",
       }}
     >
       <Container style={{ width: 200, background: "none", backdropFilter: "none" }}>
-        <Spinner size={80} />
+        <Lottie options={{ animationData: lottie }} />
       </Container>
     </Loading>
   );
 };
 
-Loader.defaultProps = {
-  id: "",
-};
-
-Loader.propTypes = {
-  id: PropTypes.string,
+BigLoading.propTypes = {
   visible: PropTypes.bool.isRequired,
 };
 
-export default Loader;
+export default BigLoading;

@@ -11,21 +11,23 @@ import { Outlet, useParams } from "react-router-dom";
 import MemeShare from "codememe2share";
 
 // own components
-import Loader from "components/Loader/Loader";
 import Navbar from "components/Navbar/Navbar";
 
 // layouts
+import BigLoading from "layouts/BigLoading/BigLoading";
 import IndexSidebar from "layouts/IndexSidebar/IndexSidebar";
 
 // contexts
+import { useIndex } from "context/IndexContext";
 
 const Home = () => {
   const { seen } = useParams();
 
-  console.log(seen);
+  const { setIndexState } = useIndex();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setIndexState({ type: "set", to: Number(seen) });
     setTimeout(() => {
       setLoading(false);
     }, 500);
@@ -35,7 +37,7 @@ const Home = () => {
     <>
       <Navbar />
       <MemeShare background="random">
-        <Loader visible={loading} />
+        <BigLoading visible={loading} />
         <IndexSidebar />
         <Outlet />
       </MemeShare>

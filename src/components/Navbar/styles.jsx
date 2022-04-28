@@ -10,7 +10,6 @@ const LinkToNPMCss = css({
 });
 
 const NavbarCss = css({
-  width: "100vw",
   paddingLeft: 10,
   height: 55,
   background: "#222333ec",
