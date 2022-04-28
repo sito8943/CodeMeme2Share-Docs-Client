@@ -33,7 +33,6 @@ const MainBody = () => {
     const newMarkdownContent = await FetchMarkdown(
       languageState.texts.Home.Main.Content[indexState.index]
     );
-    console.log(newMarkdownContent);
     setMarkdownContent(newMarkdownContent.markdown);
     setLoading(false);
   };
