@@ -10,7 +10,7 @@ const { docs } = require("./users/users");
 const { unauthorizedResponse } = require("./users/functions");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 9000;
 
 app.set("etag", "strong"); //browser caching of static assets should work properly
 app.use(cors());
