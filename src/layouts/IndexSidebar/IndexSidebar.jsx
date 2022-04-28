@@ -6,8 +6,11 @@
 /* eslint-disable react/self-closing-comp */
 import React from "react";
 
-// prop-types
-import PropTypes from "prop-types";
+// react-router-dom
+import { Link } from "react-router-dom";
+
+// context
+import { useLanguage } from "context/Language";
 
 // context
 import { useIndex } from "context/IndexContext";
@@ -23,8 +26,8 @@ import IndexSidebarCss, {
   IndexSelectedCss,
 } from "./styles";
 
-const IndexSidebar = (props) => {
-  const { texts } = props;
+const IndexSidebar = () => {
+  const { languageState } = useLanguage();
 
   const { indexState, setIndexState } = useIndex();
 
@@ -37,44 +40,46 @@ const IndexSidebar = (props) => {
     <Container className={IndexSidebarCss}>
       <Container className={IndexContentCss}>
         <AppleDots />
-        <Title variant="h4">{texts.Title}</Title>
-        {texts.Content.map((item, i) => {
+        <Title variant="h4">{languageState.texts.Home.Index.Title}</Title>
+        {languageState.texts.Home.Index.Content.map((item, i) => {
           return item.Content ? (
             <div key={`d${i}`} style={{ display: "flex", flexDirection: "column" }}>
               <Paragraph style={{ marginBottom: 0 }}>{item.Title}</Paragraph>
               {item.Content.map((jtem, j) => (
-                <Button
-                  action={listButtonClicked}
-                  className={`${ListButtonCss} ${
-                    indexState.index === jtem.Id ? IndexSelectedCss : ""
-                  } ${jtem.Sub ? SubIndexCss : ""}`}
-                  ignoreDefault
-                  key={`i${j}`}
-                  id={`i${jtem.Id}`}
-                >
-                  {jtem.Label}
-                </Button>
+                <Link to={`/docs/${jtem.Id}`}>
+                  <Button
+                    action={listButtonClicked}
+                    className={`${ListButtonCss} ${
+                      indexState.index === jtem.Id ? IndexSelectedCss : ""
+                    } ${jtem.Sub ? SubIndexCss : ""}`}
+                    ignoreDefault
+                    key={`i${j}`}
+                    id={`i${jtem.Id}`}
+                  >
+                    {jtem.Label}
+                  </Button>
+                </Link>
               ))}
             </div>
           ) : (
-            <Button
-              action={listButtonClicked}
-              className={`${ListButtonCss} ${indexState.index === item.Id ? IndexSelectedCss : ""}`}
-              ignoreDefault
-              key={`id${i}`}
-              id={`i${item.Id}`}
-            >
-              {item.Title}
-            </Button>
+            <Link to={`/docs/${item.Id}`}>
+              <Button
+                action={listButtonClicked}
+                className={`${ListButtonCss} ${
+                  indexState.index === item.Id ? IndexSelectedCss : ""
+                }`}
+                ignoreDefault
+                key={`id${i}`}
+                id={`i${item.Id}`}
+              >
+                {item.Title}
+              </Button>
+            </Link>
           );
         })}
       </Container>
     </Container>
   );
-};
-
-IndexSidebar.propTypes = {
-  texts: PropTypes.objectOf(PropTypes.any),
 };
 
 export default IndexSidebar;

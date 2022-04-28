@@ -15,6 +15,7 @@ const NavbarCss = css({
   height: 55,
   background: "#222333ec",
   display: "flex",
+  alignItems: "center",
 });
 
 export { LinkToNPMCss };

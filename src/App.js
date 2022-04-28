@@ -1,11 +1,5 @@
 /* eslint-disable react/function-component-definition */
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable react/jsx-no-undef */
-import { useEffect, useState } from "react";
-
-// lang
-import languages from "lang/lang";
+import { useEffect } from "react";
 
 // react-router-dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -13,8 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // context
 import { useLanguage } from "context/Language";
 
-// layouts
-import Main from "layouts/Main/Main";
+// own components
+// eslint-disable-next-line no-unused-vars
+import Navbar from "components/Navbar/Navbar";
 
 // views
 import Home from "views/Home/Home";
@@ -22,11 +17,10 @@ import Start from "views/Start/Start";
 
 // styles
 import "./index.css";
+import MainBody from "layouts/MainBody/MainBody";
 
 const App = () => {
   const { setLanguageState } = useLanguage();
-
-  const [currentLang, setCurrentLang] = useState("es");
 
   useEffect(() => {
     // fetching from local storage
@@ -35,22 +29,16 @@ const App = () => {
         ? "en"
         : localStorage.getItem("lang");
     if (lang !== window.navigator.language) localStorage.setItem("lang", window.navigator.language);
-    setLanguageState({ type: "set", to: lang });
-    setCurrentLang(lang.split("-")[0]);
+    setLanguageState({ type: "set", lang: lang.split("-")[0] });
   }, []);
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<Main />}>
-          <Route index element={<Start texts={languages[currentLang].Start} />} />
-          <Route path="/docs" element={<Home texts={languages[currentLang].Home} />}>
-            {/*
-          <Route path=":teamId" element={<Team />} />
-          <Route path="new" element={<NewTeamForm />} />
-          <Route index element={<LeagueStandings />} />
-          */}
-          </Route>
+        <Route path="/" element={<Start />} />
+        <Route path="docs" element={<Home />}>
+          <Route index element={<MainBody />} />
+          <Route path=":seen" element={<MainBody />} />
         </Route>
       </Routes>
     </BrowserRouter>

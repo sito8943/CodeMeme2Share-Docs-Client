@@ -2,11 +2,11 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import * as React from "react";
 
+// texts
+import texts from "lang/texts.json";
+
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
-
-// languages
-import languages from "lang/lang";
 
 const LanguageContext = React.createContext();
 
@@ -14,13 +14,8 @@ const languageReducer = (languageState, action) => {
   switch (action.type) {
     case "set":
       return {
-        language: action.to,
-        content: languages[action.to],
-      };
-    case "language":
-      return {
-        language: languageState.language === "en" ? "es" : "en",
-        content: languages[languageState.language],
+        lang: action.lang,
+        texts: texts[action.lang],
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -29,8 +24,8 @@ const languageReducer = (languageState, action) => {
 
 const LanguageProvider = ({ children }) => {
   const [languageState, setLanguageState] = React.useReducer(languageReducer, {
-    language: "en",
-    content: languages.en,
+    language: "es",
+    texts: texts.es,
   });
 
   const value = { languageState, setLanguageState };

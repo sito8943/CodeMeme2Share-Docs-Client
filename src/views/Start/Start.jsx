@@ -4,14 +4,17 @@
 /* eslint-disable react/jsx-no-undef */
 import { useState, useEffect } from "react";
 
+// framer-motion
+import { motion } from "framer-motion";
+
 // react-router-dom
 import { Link } from "react-router-dom";
 
-// prop-types
-import PropTypes from "prop-types";
-
 // codememe2share components
 import MemeShare, { Container, Rotate, AppleDots, Title, Paragraph, Button } from "codememe2share";
+
+// contexts
+import { useLanguage } from "context/Language";
 
 // own components
 import Loader from "components/Loader/Loader";
@@ -25,8 +28,8 @@ import logo from "assets/images/logo.svg";
 // styles
 import { RotateCss, ParagraphCss, LinkButtonCss } from "./styles";
 
-const Start = (props) => {
-  const { texts } = props;
+const Start = () => {
+  const { languageState } = useLanguage();
 
   const [loading, setLoading] = useState(true);
 
@@ -40,28 +43,34 @@ const Start = (props) => {
     <MemeShare background="random">
       <Loader visible={loading} />
       {!loading && (
-        <Container>
-          <AppleDots />
-          <Rotate className={RotateCss} delay="5s">
-            <img src={logo} alt="react-logo" />
-          </Rotate>
-          <Title variant="h3">CodeMeme2Share</Title>
-          <Paragraph className={ParagraphCss}>{texts.Content}</Paragraph>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+        >
+          <Container>
+            <AppleDots />
+            <Rotate className={RotateCss} delay="5s">
+              <img src={logo} alt="react-logo" />
+            </Rotate>
+            <Title variant="h3">CodeMeme2Share</Title>
+            <Paragraph className={ParagraphCss}>{languageState.texts.Start.Content}</Paragraph>
 
-          <Link to="/docs" style={{ textDecoration: "none" }}>
-            <Button className={LinkButtonCss}>
-              {texts.Button}
-              <BsFillArrowRightCircleFill />
-            </Button>
-          </Link>
-        </Container>
+            <Link to="/docs" style={{ textDecoration: "none" }}>
+              <Button className={LinkButtonCss}>
+                {languageState.texts.Start.Button}
+                <BsFillArrowRightCircleFill />
+              </Button>
+            </Link>
+          </Container>
+        </motion.div>
       )}
     </MemeShare>
   );
-};
-
-Start.propTypes = {
-  texts: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default Start;

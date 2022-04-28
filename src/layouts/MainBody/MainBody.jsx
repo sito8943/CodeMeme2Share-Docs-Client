@@ -10,8 +10,8 @@ import React, { useEffect, useState } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
 
-// prop-types
-import PropTypes from "prop-types";
+// contexts
+import { useLanguage } from "context/Language";
 
 // context
 import { useIndex } from "context/IndexContext";
@@ -25,21 +25,23 @@ import { FetchMarkdown } from "services/post";
 // styles
 import MainBodyCss, { MainContentCss, MarkdownCss } from "./styles";
 
-const MainBody = (props) => {
-  const { texts } = props;
+const MainBody = () => {
+  const { languageState } = useLanguage();
 
   const { indexState } = useIndex();
 
   const [markdownContent, setMarkdownContent] = useState("");
 
   const init = async () => {
-    const newMarkdownContent = await FetchMarkdown(texts.Content[indexState.index]);
+    const newMarkdownContent = await FetchMarkdown(
+      languageState.texts.Home.Index.Content[indexState.index]
+    );
     setMarkdownContent(newMarkdownContent.markdown);
   };
 
   useEffect(() => {
     init();
-  }, [texts, indexState.index]);
+  }, [indexState.index]);
 
   return (
     <Container className={MainBodyCss}>
@@ -53,10 +55,6 @@ const MainBody = (props) => {
       </Container>
     </Container>
   );
-};
-
-MainBody.propTypes = {
-  texts: PropTypes.objectOf(PropTypes.any),
 };
 
 export default MainBody;

@@ -2,26 +2,27 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable arrow-body-style */
-/* eslint-disable react/self-closing-comp */
 import { useState, useEffect } from "react";
 
-// prop-types
-import PropTypes from "prop-types";
+// react-router-dom
+import { Outlet, useParams } from "react-router-dom";
 
 // codememe2share components
 import MemeShare from "codememe2share";
 
 // own components
 import Loader from "components/Loader/Loader";
+import Navbar from "components/Navbar/Navbar";
 
 // layouts
-import Navbar from "layouts/Navbar/Navbar";
 import IndexSidebar from "layouts/IndexSidebar/IndexSidebar";
-import MainBody from "layouts/MainBody/MainBody";
 
-const Home = (props) => {
-  const { texts } = props;
+// contexts
 
+const Home = () => {
+  const { seen } = useParams();
+
+  console.log(seen);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -35,15 +36,11 @@ const Home = (props) => {
       <Navbar />
       <MemeShare background="random">
         <Loader visible={loading} />
-        <IndexSidebar texts={texts.Index} />
-        <MainBody texts={texts.Main} />
+        <IndexSidebar />
+        <Outlet />
       </MemeShare>
     </>
   );
-};
-
-Home.propTypes = {
-  texts: PropTypes.objectOf(PropTypes.any),
 };
 
 export default Home;

@@ -66,5 +66,73 @@
         ]
       }
     }
+  },
+  "en": {
+    "Start": {
+      "Content": "Do you want to make your cool code shorts public?",
+      "Button": "Get started"
+    },
+    "Home": {
+      "Index": {
+        "Title": "Content",
+        "Content": [
+          {
+            "Title": "Getting started",
+            "Content": [
+              {
+                "Id": 0,
+                "Label": "Installation"
+              },
+              {
+                "Id": 1,
+                "Label": "Usage"
+              }
+            ]
+          },
+          {
+            "Title": "Components",
+            "Content": [
+              {
+                "Id": 2,
+                "Label": "Loading"
+              },
+              {
+                "Id": 3,
+                "Label": "Spinner",
+                "Sub": "#Spinner"
+              },
+              { "Id": 4, "Label": "Container" },
+              { "Id": 5, "Label": "Rotate", "Sub": "#Rotate" },
+              { "Id": 6, "Label": "Notification" },
+              { "Id": 7, "Label": "Typography" },
+              { "Id": 8, "Label": "Title", "Sub": "#Title" },
+              { "Id": 9, "Label": "Paragraph", "Sub": "#Paragraph" },
+              { "Id": 10, "Label": "CodeArea (Alpha)", "Sub": "#CodeArea" },
+              { "Id": 11, "Label": "Button" },
+              { "Id": 12, "Label": "FileButton", "#Sub": "#FileButton" },
+              { "Id": 13, "Label": "LinkButton", "#Sub": "#LinkButton" },
+              { "Id": 14, "Label": "Icons" },
+              { "Id": 15, "Label": "Gradients" }
+            ]
+          }
+        ]
+      },
+      "Main": {
+        "Content": [
+          {
+            "Id": 0,
+            "Markdowns": "en:installation"
+          },
+          {
+            "Id": 1,
+            "Markdowns": "en:usage"
+          },
+          {
+            "Id": 2,
+            "Markdowns": "en:loading"
+          }
+        ]
+      }
+    }
   }
 }
